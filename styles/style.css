@@ -38,6 +38,7 @@ fieldset {
 ul,
 ol {
   list-style: none;
+  /* background-color: #1b1919; */
 }
 
 .content {

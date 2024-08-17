@@ -39,6 +39,7 @@ ul,
 ol {
   list-style: none;
   background-color: #1b1919;
+  color: #1b1919;
 }
 
 .content {

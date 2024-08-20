@@ -17,7 +17,6 @@ html {
   font-size: 18px;
   background-color: #1b1919;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -45,7 +44,6 @@ ol {
   justify-content: center;
   align-items: end;
   gap: 30px;
-  height: 534px;
 }
 
 .search-form {
@@ -57,16 +55,15 @@ ol {
 .content__details {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-start;
   align-items: start;
-  width: 298px;
-  height: 534px;
+  width: 399px;
 }
 
 .content__list {
   position: relative;
-  height: 399px;
-  overflow-y: scroll;
+  height: 298px;
+  overflow-y: auto;
 }
 
 .result__video-container {
@@ -86,24 +83,20 @@ ol {
   margin-bottom: 30px;
 }
 
-.content__list-item:active {
+.content__card-link:active {
   background-color: #545050;
 }
 
-.content__video-card-title:hover {
-  border-bottom: 1px solid #ffffff;
+.content__card-link:hover {
+  text-decoration: underline;
 }
 
-.content__video-card-description:hover {
-  border-bottom: 1px solid #ffffff;
-}
-
-.content__list-item:focus {
+.content__card-link:focus {
   outline: none;
 }
-.content__list-item:has(:focus-visible) {
-  outline: 1px solid #fff;
-  outline-offset: 2px;
+
+.content__card-link:focus-visible {
+  border: 1px solid #fff;
 }
 
 .content__card-link_current {
@@ -156,13 +149,16 @@ ol {
 }
 
 .content__video-card-title {
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .content__video-card-description {
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 90%;
@@ -192,30 +188,31 @@ ol {
   cursor: pointer;
 }
 
-input[type="text"] {
+.search-form__textfield {
   border: none;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid #fff;
   border-top: 1px solid #fff;
   width: 225px;
-  height: 27px;
+  min-height: 27px;
   background: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-input[type="text"]:active {
+.search-form__textfield:active {
   border: 1px solid #fff;
 }
 
-input[type="text"]:focus {
-  border: 1px solid #fff;
+.search-form__textfield:focus {
+  outline: none;
 }
 
-.search-form__label:has(:focus-visible) {
+.search-form__label:has(.search-form__textfield:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
@@ -230,7 +227,7 @@ input[type="text"]:focus {
   gap: 5px;
 }
 
-.search-form__label:hover {
+.search-form__label-text:hover {
   text-decoration: underline;
 }
 
@@ -250,11 +247,19 @@ input[type="text"]:focus {
   background-color: white;
 }
 
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+  display: flex;
+  align-items: center;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
 .button {
   border: 1px solid #fff;
   width: 194px;
   height: 34px;
   background: transparent;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 700;
   font-size: 18px;
   text-align: center;
@@ -287,3 +292,4 @@ input[type="text"]:focus {
   width: 399px;
   height: 34px;
 }
+

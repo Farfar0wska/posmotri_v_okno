@@ -273,6 +273,7 @@ ol {
 .button:active {
   background: #545050;
 }
+
 .button:hover {
   text-decoration: underline;
 }
